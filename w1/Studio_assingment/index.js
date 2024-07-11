@@ -79,22 +79,20 @@ loudness: 7
 
 var xScale = d3.scaleLinear()
 .domain([0, 10])
-.range([50, w - 50]); // Leave some margin for the axes
+.range([50, w - 50]); 
 
 var yScale = d3.scaleLinear()
 .domain([0, 10])
-.range([h - 50, 50]); // Inverted range to place 0 at the bottom
+.range([h - 50, 50]); 
 
-// Create axes
+
 var xAxis = d3.axisBottom(xScale)
 .ticks(10)
-.tickFormat(d => d.toFixed(2)); // Adjust tick format
-
+.tickFormat(d => d.toFixed(2)); 
 var yAxis = d3.axisLeft(yScale)
 .ticks(10)
 
 
-// Append x-axis
 canvas.append("g")
 .attr("transform", `translate(0, ${h - 50})`)
 .call(xAxis)
@@ -104,9 +102,9 @@ canvas.append("text")
             .attr("transform", `translate(${w / 2}, ${h - 10})`)
             .style("text-anchor", "middle")
             .style("fill", "white")
-            .text("Minutes"); // Axis color
+            .text("Minutes"); 
 
-// Append y-axis
+
 canvas.append("g")
 .attr("transform", "translate(50, 0)")
 .call(yAxis)
@@ -165,9 +163,9 @@ var legendData = [
         
 var legend = canvas.append("g")
     .attr("class", "legend")
-    .attr("transform", "translate(600, 20)"); // Adjust position as needed
+    .attr("transform", "translate(600, 20)"); 
 
-// Add legend items
+
 var legendItems = legend.selectAll("g")
     .data(legendData)
     .enter()
@@ -176,7 +174,6 @@ var legendItems = legend.selectAll("g")
         return "translate(0, " + (i * 20) + ")";
     });
 
-// Add colored shapes (e.g., circles or rectangles)
 legendItems.each(function(d) {
     if (d.shape === "circle") {
         d3.select(this).append("circle")
@@ -201,7 +198,7 @@ legendItems.append("text")
 
 canvas.append("text")
 .attr("x", w / 2)
-.attr("y", 20) // Adjust position as needed
+.attr("y", 20) 
 .attr("text-anchor", "middle")
 .attr("fill", "white")
 .style("font-size",  "17px")
