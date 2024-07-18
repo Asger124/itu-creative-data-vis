@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raindrops</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif; /* Optional: Set font family */
+        }
+        #canvas-container {
+            width: 120%; /* Adjust as needed */
+            transform: scale(0.8); /* Adjust the scale factor as needed */
+            transform-origin: center;
+            display: flex; /* Ensure flex layout for positioning */
+        }
+        #canvas {
+            flex: 1; /* Make canvas take remaining space */
+        }
+        #info {
+            width: 200px; /* Adjust width as needed */
+            padding: 20px; /* Optional: Add padding */
+            background-color: black; /* Example background color */
+            color: white; /* Example text color */
+			font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <div id="canvas">
+            <!-- Your D3.js content goes here -->
+        </div>
+        <div id="info">
+            <!-- Text field for information -->
+            <h2>Legend</h2>
+            <p>The vizualisation shows raindrops counted at different step-intervals, for four different persons. 
+				Each person is represented by a circle, and differentiated by color ( 
+					<span style="color: blue;">Viggo</span>, <span style="color: green;">Phi Va</span>, <span style="color: red;">Emil</span>, <span style="color: yellow;">Oliver</span>)
+				<br> <br>
+				The dots inside the circles represent number of raindrops. The steps are divided into six intervals represented by a grid format, with lines at every 10th step.
+			</p>
+            <!-- Add more content as needed -->
+        </div>
+    </div>
+    
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="index_assignment.js"></script>
+</body>
+</html>
